@@ -2,31 +2,28 @@ import React, { Component } from 'react';
 import Contact from './Contact';
 
 class Contacts extends Component {
-  constructor() {
-    super();
-    this.state = {
-      contacts: [
-        {
-          id: 1,
-          name: 'John Doe',
-          email: 'jdoe@gmail.com',
-          phone: '555-555-5555'
-        },
-        {
-          id: 2,
-          name: 'Karen Williams',
-          email: 'karen@gmail.com',
-          phone: '333-333-3333'
-        },
-        {
-          id: 3,
-          name: 'Henry Johnson',
-          email: 'henry@gmail.com',
-          phone: '777-777-7777'
-        }
-      ]
-    };
-  }
+  state = {
+    contacts: [
+      {
+        id: 1,
+        name: 'John Doe',
+        email: 'jdoe@gmail.com',
+        phone: '555-555-5555'
+      },
+      {
+        id: 2,
+        name: 'Karen Williams',
+        email: 'karen@gmail.com',
+        phone: '333-333-3333'
+      },
+      {
+        id: 3,
+        name: 'Henry Johnson',
+        email: 'henry@gmail.com',
+        phone: '777-777-7777'
+      }
+    ]
+  };
 
   render() {
     const { contacts } = this.state;
@@ -34,12 +31,7 @@ class Contacts extends Component {
     return (
       <div>
         {contacts.map(contact => (
-          <Contact
-            key={contact.id}
-            name={contact.name}
-            email={contact.email}
-            phone={contact.phone}
-          />
+          <Contact key={contact.id} contact={contact} />
         ))}
       </div>
     );
