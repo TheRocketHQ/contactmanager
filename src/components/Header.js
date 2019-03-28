@@ -6,7 +6,7 @@ const Header = props => {
 
   return (
     <div>
-      <h1>{branding}</h1>
+      <h1 style={{ color: 'red' }}>{branding}</h1>
     </div>
   );
 };
@@ -15,7 +15,7 @@ Header.defaultProps = {
   branding: 'My App'
 };
 
-Header.PropTypes = {
+Header.propTypes = {
   branding: PropTypes.string.isRequired
 };
 
