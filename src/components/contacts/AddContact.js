@@ -68,7 +68,7 @@ class AddContact extends Component {
                     name="name"
                     placeholder="Enter Name.."
                     value={name}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.name}
                   />
                   <TextInputGroup
@@ -77,7 +77,7 @@ class AddContact extends Component {
                     type="email"
                     placeholder="Enter Email.."
                     value={email}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.email}
                   />
                   <TextInputGroup
@@ -85,7 +85,7 @@ class AddContact extends Component {
                     name="phone"
                     placeholder="Enter Phone.."
                     value={phone}
-                    onChange={this.onchange}
+                    onChange={this.onChange}
                     error={errors.phone}
                   />
                 </form>
