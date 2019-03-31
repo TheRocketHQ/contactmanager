@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
+import TextInputGroup from '../layout/TextInputGroup';
+
 import uuid from 'uuid';
 
 class AddContact extends Component {
@@ -8,8 +10,6 @@ class AddContact extends Component {
     email: '',
     phone: ''
   };
-
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   onSubmit = (dispatch, e) => {
     e.preventDefault();
@@ -33,6 +33,8 @@ class AddContact extends Component {
     });
   };
 
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
     const { name, email, phone } = this.state;
 
@@ -44,55 +46,36 @@ class AddContact extends Component {
             <div className="card mb-3">
               <div className="card-header">Add Contact</div>
               <div className="card-body">
-                <form onSubmit={this.bind(this, dispatch)}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="form-control from-control-lg"
-                      placeholder="Enter name..."
-                      value={name}
-                      onChange={this.onChange}
-                    />
-                  </div>
-                </form>
-              </div>
-              <div className="card-body">
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="text"
-                      name="email"
-                      className="form-control from-control-lg"
-                      placeholder="Enter email..."
-                      value={email}
-                      onChange={this.onChange}
-                    />
-                  </div>
-                </form>
-              </div>
-              <div className="card-body">
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      type="text"
-                      name="phone"
-                      className="form-control from-control-lg"
-                      placeholder="Enter phone..."
-                      value={phone}
-                      onChange={this.onChange}
-                    />
-                  </div>
-                  <input
-                    type="submit"
-                    value="Add Contact"
-                    className="btn btn-light btn-block"
+                <form onSubmit={this.onSubmit.bind(this, dispatch)}>
+                  <TextInputGroup
+                    label="Name"
+                    name="name"
+                    placeholder="Enter Name.."
+                    value={name}
+                    onChange={this.onchange}
+                  />
+                  <TextInputGroup
+                    label="Email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter Email.."
+                    value={email}
+                    onChange={this.onchange}
+                  />
+                  <TextInputGroup
+                    label="Phone"
+                    name="phone"
+                    placeholder="Enter Phone.."
+                    value={phone}
+                    onChange={this.onchange}
                   />
                 </form>
               </div>
+              <input
+                type="submit"
+                value="Add Contact"
+                className="btn btn-light btn-block"
+              />
             </div>
           );
         }}
