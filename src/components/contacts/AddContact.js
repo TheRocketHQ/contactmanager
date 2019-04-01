@@ -91,12 +91,12 @@ class AddContact extends Component {
                     onChange={this.onChange}
                     error={errors.phone}
                   />
+                  <input
+                    type="submit"
+                    value="Add Contact"
+                    className="btn btn-light btn-block"
+                  />
                 </form>
-                <input
-                  type="submit"
-                  value="Add Contact"
-                  className="btn btn-light btn-block"
-                />
               </div>
             </div>
           );
