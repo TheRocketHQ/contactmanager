@@ -7,7 +7,7 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "gh-pages": "^2.0.1",
-    "homepage": "https://therockethq.github.io/contactmanager/build",
+    "homepage": "https://therockethq.github.io/contactmanager/index.html",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
